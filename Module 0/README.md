@@ -9,5 +9,11 @@
 
 # Exercice 0 - Setup : 
 # The client -Server Archetecture
+PostgreSql is an open source database which follows a client-server archetecture. it is devided in three different components:
+ - client, a program on the user machine which communicates the users query to the server and receives the servers answers.
+ - a server, a program running in the background that manages access to a specefic resource, service or network. The server will understand the client query and apply it to the database, then it will send an answer to the client.
+ - a databaes system, where the data is stored.
+
+ 
 
 
