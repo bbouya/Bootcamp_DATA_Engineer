@@ -1,8 +1,3 @@
-    """"
-        Objectif :
-            Clean the given CSV dataset to insert it into PostgresQL TABLE:
-    """
-
 
 # Clean the given CSV dataset  to insert it into a PostrgresSQL table:
 # Instructions :
@@ -13,30 +8,28 @@
 # - set average use Rating as the Median of the column if NAN.
 # - Set user Rating count as 1 if NAN.
 
-import pandas as pd
-
-
 def df_nan_filter(df):
     
     """
     Apply filters on NAN VAUES
     args : 
-        df : Pandas DataFrame
+    df : Pandas DataFrame
     Returns: 
-        Filtered dataframe.
+    Filtered dataframe.
     Raises:
-        This function shouldnt rainses any exception.
+    This function shouldnt rainses any exception.
         
     """
     print(df["Size"].isnull().count())
     df['Size'].dropna()
-    print("After drop : "+ df['Size'].isnull().count())
+    print("After drop : "+ str(df['Size'].isnull().count()))
     
     df['Languages'].fillna('EN', inplace = True)
-    # Calcule the Average:
+    #Calcule the Average:
     #Average = df['Rating'].median()
-    df["Rating"].fillna(df.mean())
-    df["User Rating Count"].fillna(1)
+    #df["Average User Rating"].fillna(df.mean())
+    #df["User Rating Count"].fillna(1)
+    return df
     
     
     
@@ -64,5 +57,6 @@ def  string_filter(s: str):
     s = s.replace('\\\'','\'').replace('\\\\','\\')
     s = re.sub(r' +',' ',s)
     return (s)     
+
 
                                        
